@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://ontospread.sf.net" 
+    xmlns="http://ontospread.sf.net" 
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:jxb="http://java.sun.com/xml/ns/jaxb"
+    xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+    elementFormDefault="qualified" 
+    attributeFormDefault="unqualified"
+    jxb:extensionBindingPrefixes="xjc"
+    jxb:version="1.0">
+    
+    <xs:annotation>
+        <!--Provide in other schema -->
+        <!--
+        <xs:appinfo>
+            <jxb:globalBindings generateIsSetMethod="true">
+                <xjc:serializable uid="12344"/>
+                <xjc:simple/>    
+            </jxb:globalBindings>
+        </xs:appinfo>
+        -->
+    </xs:annotation>
+
+    <xs:complexType name="ontoSpreadStateType">
+        <xs:sequence>
+            <xs:element name="scoredConcepts" type="scoredConceptTOListType"></xs:element>
+            <xs:element name="spreadTime" type="xs:long"></xs:element>
+            <xs:element name="spreadedConcepts" type="spreadConceptListType"/>
+            <xs:element name="spreadPathTable" type="entryPathTableListType"></xs:element>
+            <xs:element name="finalSpreadedConcepts" type="spreadedConceptTOListType"></xs:element>
+            <xs:element name="uriDepthPair" type="uriDepthListType"></xs:element>
+            <xs:element name="concepts" type="entryConceptsListType"></xs:element>
+            <xs:element name="conceptTOSpread" type="xs:anyURI"></xs:element>
+            <xs:element name="hasIteration" type="xs:boolean"></xs:element>
+            <xs:element name="currentScore" type="xs:double"></xs:element>
+            <xs:element name="prizeTable" type="entryPrizeTableListType"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="spreadConceptListType">
+        <xs:sequence>
+            <xs:element name="spreadedConcept" type="xs:anyURI" maxOccurs="unbounded"/>            
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="scoredConceptTOListType">
+        <xs:sequence>
+            <xs:element name="scoredConceptTO" type="scoredConceptTOType" maxOccurs="unbounded"/>            
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="scoredConceptTOType">
+        <xs:sequence>
+            <xs:element name="conceptUri" type="xs:anyURI"/>
+            <xs:element name="score" type="xs:double"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="pathTOType">
+        <xs:sequence>
+            <xs:element name="uri" type="xs:anyURI"/>
+            <xs:element name="relations" type="listUrisType"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+   
+    <xs:complexType name="listUrisType">
+        <xs:sequence>
+            <xs:element name="relation" type="xs:anyURI" maxOccurs="unbounded"/>            
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="pathTOTypeList">
+        <xs:sequence>
+            <xs:element name="pathTO" type="pathTOType" maxOccurs="unbounded"/>            
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="entryPathTableType">
+        <xs:sequence>
+            <xs:element name="uri" type="xs:anyURI"/>            
+            <xs:element name="pathTOs" type="pathTOTypeList"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="entryPathTableListType">
+        <xs:sequence>
+            <xs:element name="spreadTableTO" type="entryPathTableType" maxOccurs="unbounded"/>            
+        </xs:sequence>
+    </xs:complexType>
+    
+    
+    <xs:complexType name="spreadedConceptTOListType">
+        <xs:sequence>
+            <xs:element name="spreadedConceptTO" type="spreadedConceptTOType" maxOccurs="unbounded"/>            
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="spreadedConceptTOType">
+        <xs:sequence>
+            <xs:element name="conceptUri" type="xs:anyURI"/>
+            <xs:element name="pathTOs" type="pathTOTypeList"></xs:element>
+            <xs:element name="score" type="xs:double"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="uriDepthListType">
+        <xs:sequence>
+            <xs:element name="uriDepthPair" type="uriDepthPairType" maxOccurs="unbounded"/>            
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="uriDepthPairType">
+        <xs:sequence>
+            <xs:element name="conceptUri" type="xs:anyURI"/>
+            <xs:element name="depth" type="xs:int"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+
+    <xs:complexType name="entryConceptsType">
+        <xs:sequence>
+            <xs:element name="uri" type="xs:anyURI"/>            
+            <xs:element name="value" type="xs:double"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="entryConceptsListType">
+        <xs:sequence>
+            <xs:element name="entryConceptTO" type="entryConceptsType" maxOccurs="unbounded"/>            
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="entryPrizeTableListType">
+        <xs:sequence>
+            <xs:element name="entryPrizeTableTO" type="entryPrizeTableTOType" maxOccurs="unbounded"/>            
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="entryPrizeTableTOType">
+        <xs:sequence>            
+            <xs:element name="pathTO" type="pathTOType"></xs:element>
+            <xs:element name="hits" type="xs:int"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="ontoSpreadXMLState" type="ontoSpreadStateType"></xs:element>    
+</xs:schema>

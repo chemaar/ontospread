@@ -1,0 +1,185 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+    xmlns:onto="http://ontospread.sf.net#"> 
+  
+  <rdf:Description
+      rdf:about="http://ontospread.sf.net#default"
+      onto:point="0.0" /> <!-- disable default relations -->
+  
+  <rdf:Description
+      rdf:about="http://ontospread.sf.net#SUPERCLASS"
+      onto:point="0.5"/>  
+  <rdf:Description
+      rdf:about="http://ontospread.sf.net#SUBCLASS"
+      onto:point="0.2"/>
+   <rdf:Description
+      rdf:about="http://ontospread.sf.net#INSTANCE"
+      onto:point="0.0"/>  
+  <rdf:Description
+      rdf:about="http://ontospread.sf.net#INSTANCE_OF"
+      onto:point="0.0"/>
+  
+  <rdf:Description
+      rdf:about="http://websemantica.fundacionctic.org/ontologias/bopa#esCompetenciaDe"
+      onto:point="0.5"/>  
+  <rdf:Description
+      rdf:about="http://websemantica.fundacionctic.org/ontologias/bopa#tieneCompetencia"
+      onto:point="0.5"/>
+
+  <rdf:Description
+      rdf:about="http://websemantica.fundacionctic.org/ontologias/bopa#requiere"
+      onto:point="0.5"/>
+  <rdf:Description
+      rdf:about="http://websemantica.fundacionctic.org/ontologias/bopa#condiciona"
+      onto:point="0.5"/>  
+
+  <rdf:Description
+      rdf:about="http://websemantica.fundacionctic.org/ontologias/bopa#localizacion"
+      onto:point="0.2"/>
+  <rdf:Description
+      rdf:about="http://websemantica.fundacionctic.org/ontologias/bopa#esLocalizacionDe"
+      onto:point="0.2"/>  
+
+  <rdf:Description
+      rdf:about="http://websemantica.fundacionctic.org/ontologias/bopa#causa"
+      onto:point="0.2"/>
+  <rdf:Description
+      rdf:about="http://websemantica.fundacionctic.org/ontologias/bopa#esEfectoDe"
+      onto:point="0.2"/>  
+
+  <rdf:Description
+      rdf:about="http://websemantica.fundacionctic.org/ontologias/bopa#dependeDe"
+      onto:point="0.2"/>  
+  <rdf:Description
+      rdf:about="http://websemantica.fundacionctic.org/ontologias/bopa#tieneJerarquia"
+      onto:point="0.2"/>
+
+  <rdf:Description
+      rdf:about="http://websemantica.fundacionctic.org/ontologias/bopa#tieneParte"
+      onto:point="0.3"/>  
+  <rdf:Description
+      rdf:about="http://websemantica.fundacionctic.org/ontologias/bopa#esParteDe"
+      onto:point="0.3"/>
+
+  <rdf:Description
+      rdf:about="http://websemantica.fundacionctic.org/ontologias/bopa#habilita"
+      onto:point="0.5"/>  
+  <rdf:Description
+      rdf:about="http://websemantica.fundacionctic.org/ontologias/bopa#tieneRequisitos"
+      onto:point="0.5"/>
+
+  <rdf:Description
+      rdf:about="http://websemantica.fundacionctic.org/ontologias/bopa#esPersonalDe"
+      onto:point="0.2"/>  
+  <rdf:Description
+      rdf:about="http://websemantica.fundacionctic.org/ontologias/bopa#tienePersonal"
+      onto:point="0.2"/>
+
+  <rdf:Description
+      rdf:about="http://websemantica.fundacionctic.org/ontologias/bopa#tieneParte-i"
+      onto:point="0.2"/>  
+  <rdf:Description
+      rdf:about="http://websemantica.fundacionctic.org/ontologias/bopa#esParteDe-i"
+      onto:point="0.2"/>
+
+  <rdf:Description
+      rdf:about="http://websemantica.fundacionctic.org/ontologias/bopa#impide"
+      onto:point="0.2"/>  
+  <rdf:Description
+      rdf:about="http://websemantica.fundacionctic.org/ontologias/bopa#seImpideCon"
+      onto:point="0.2"/>
+
+  <rdf:Description
+      rdf:about="http://websemantica.fundacionctic.org/ontologias/bopa#atributo"
+      onto:point="0.2"/>  
+  <rdf:Description
+      rdf:about="http://websemantica.fundacionctic.org/ontologias/bopa#esAtributoDe"
+      onto:point="0.2"/>
+
+  <rdf:Description
+      rdf:about="http://websemantica.fundacionctic.org/ontologias/bopa#gestiona"
+      onto:point="0.2"/>  
+  <rdf:Description
+      rdf:about="http://websemantica.fundacionctic.org/ontologias/bopa#esGestionadoPor"
+      onto:point="0.2"/>
+
+  <rdf:Description
+      rdf:about="http://websemantica.fundacionctic.org/ontologias/bopa#emite"
+      onto:point="0.2"/>
+  <rdf:Description
+      rdf:about="http://websemantica.fundacionctic.org/ontologias/bopa#esEmitidaPor"
+      onto:point="0.2"/>  
+
+  <rdf:Description
+      rdf:about="http://websemantica.fundacionctic.org/ontologias/bopa#describe"
+      onto:point="0.2"/>  
+  <rdf:Description
+      rdf:about="http://websemantica.fundacionctic.org/ontologias/bopa#descripcion"
+      onto:point="0.2"/>
+
+  <rdf:Description
+      rdf:about="http://websemantica.fundacionctic.org/ontologias/bopa#usa"
+      onto:point="0.2"/>
+  <rdf:Description
+      rdf:about="http://websemantica.fundacionctic.org/ontologias/bopa#esUsadoPor"
+      onto:point="0.2"/>  
+
+  <rdf:Description
+      rdf:about="http://websemantica.fundacionctic.org/ontologias/bopa#regula"
+      onto:point="0.2"/>  
+  <rdf:Description
+      rdf:about="http://websemantica.fundacionctic.org/ontologias/bopa#esReguladoPor"
+      onto:point="0.7"/>
+
+  <rdf:Description
+      rdf:about="http://websemantica.fundacionctic.org/ontologias/bopa#financia"
+      onto:point="0.2"/>
+  <rdf:Description
+      rdf:about="http://websemantica.fundacionctic.org/ontologias/bopa#esFinanciadoPor"
+      onto:point="0.2"/>  
+
+  <rdf:Description
+      rdf:about="http://websemantica.fundacionctic.org/ontologias/bopa#tienePaciente"
+      onto:point="0.2"/>  
+  <rdf:Description
+      rdf:about="http://websemantica.fundacionctic.org/ontologias/bopa#esPacienteDe"
+      onto:point="0.2"/>
+
+  <rdf:Description
+      rdf:about="http://websemantica.fundacionctic.org/ontologias/bopa#tieneAgente"
+      onto:point="0.2"/>  
+  <rdf:Description
+      rdf:about="http://websemantica.fundacionctic.org/ontologias/bopa#esAgenteDe"
+      onto:point="0.2"/>
+
+  <rdf:Description
+      rdf:about="http://websemantica.fundacionctic.org/ontologias/bopa#tieneBeneficiario"
+      onto:point="0.2"/>  
+  <rdf:Description
+      rdf:about="http://websemantica.fundacionctic.org/ontologias/bopa#esBeneficiarioDe"
+      onto:point="0.2"/>
+
+  <!--Composite relations.-->
+
+  <rdf:Description
+      rdf:about="http://websemantica.fundacionctic.org/ontologias/bopa#causaCondicionesA">
+    <onto:point>0.2</onto:point>
+  </rdf:Description>
+  
+  <rdf:Description
+      rdf:about="http://websemantica.fundacionctic.org/ontologias/bopa#careceDeAtributo">
+    <onto:point>0.2</onto:point>
+  </rdf:Description>
+  
+  <rdf:Description
+      rdf:about="http://websemantica.fundacionctic.org/ontologias/bopa#regulaElUsoDe">
+    <onto:point>0.2</onto:point>
+  </rdf:Description>
+  
+  <rdf:Description
+      rdf:about="http://websemantica.fundacionctic.org/ontologias/bopa#seTransformaEn">
+    <onto:point>0.2</onto:point>
+  </rdf:Description>
+
+</rdf:RDF>

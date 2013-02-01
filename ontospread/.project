@@ -1,0 +1,21 @@
+<projectDescription>
+  <name>ontospread</name>
+  <comment>Ontospread, library. NO_M2ECLIPSE_SUPPORT: Project files created with the maven-eclipse-plugin are not supported in M2Eclipse.</comment>
+  <projects/>
+  <buildSpec>
+    <buildCommand>
+      <name>net.sourceforge.texlipse.builder.TexlipseBuilder</name>
+    </buildCommand>
+    <buildCommand>
+      <name>org.eclipse.jdt.core.javabuilder</name>
+    </buildCommand>
+    <buildCommand>
+      <name>net.sourceforge.metrics.builder</name>
+    </buildCommand>
+  </buildSpec>
+  <natures>
+    <nature>net.sourceforge.texlipse.builder.TexlipseNature</nature>
+    <nature>org.eclipse.jdt.core.javanature</nature>
+    <nature>net.sourceforge.metrics.nature</nature>
+  </natures>
+</projectDescription>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://ontospread.sf.net" 
+           xmlns="http://ontospread.sf.net" 
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:jxb="http://java.sun.com/xml/ns/jaxb"
+           xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+           elementFormDefault="qualified" 
+           attributeFormDefault="unqualified"
+           jxb:extensionBindingPrefixes="xjc"
+           jxb:version="1.0">
+
+ <xs:annotation>
+  <xs:appinfo>
+   <jxb:globalBindings generateIsSetMethod="true">
+    <xjc:serializable uid="12343"/>
+    <xjc:simple/>    
+   </jxb:globalBindings>
+  </xs:appinfo>
+ </xs:annotation>
+ 
+ <xs:simpleType name="typeOf"> 
+  <xs:restriction base="xs:string">
+    <xs:enumeration value="class"/>
+   <xs:enumeration value="instance"/>
+   <xs:enumeration value="context"/>
+   <xs:enumeration value="other"/>
+  </xs:restriction>
+ </xs:simpleType>
+ 
+ <xs:simpleType name="typeHierarchy"> 
+  <xs:restriction base="xs:string">
+   <xs:enumeration value="subclass"/>
+   <xs:enumeration value="superclass"/>
+   <xs:enumeration value="instance"/>
+   <xs:enumeration value="instanceOf"/>
+  </xs:restriction>
+ </xs:simpleType>
+ 
+ <xs:simpleType name="typeValueCardinality"> 
+  <xs:restriction base="xs:string">
+   <xs:enumeration value="all"/>
+   <xs:enumeration value="some"/>
+   <xs:enumeration value="has value"/>
+  </xs:restriction>
+ </xs:simpleType>
+ 
+ <xs:simpleType name="titleType"> 
+   <xs:restriction base="xs:string"/>
+ </xs:simpleType>
+ 
+ <xs:simpleType name="descriptionType"> 
+   <xs:restriction base="xs:string"/>
+ </xs:simpleType>
+ 
+ 
+ <xs:complexType name="contextListType">
+  <xs:sequence>
+   <xs:element name="contextDescription"
+    minOccurs="0" maxOccurs="unbounded"
+    type="conceptDescriptionType" />
+  </xs:sequence>
+ </xs:complexType>
+ 
+ <xs:complexType name="conceptDescriptionListType">
+  <xs:sequence>
+   <xs:element ref="conceptDescription"  
+    minOccurs="0"
+    maxOccurs="unbounded"/>
+  </xs:sequence>
+ </xs:complexType>
+ 
+ 
+ <xs:complexType name="conceptType">
+  <xs:sequence>
+   <xs:element ref="conceptDescription"/>
+   <xs:element name="context" type="xs:boolean" minOccurs="0"/>
+   <xs:element ref="relations" minOccurs="0"/>   
+   <xs:element name="instances"   type="conceptDescriptionListType"/>
+   <xs:element name="instanceof"  type="conceptDescriptionListType"/>
+  </xs:sequence>
+ </xs:complexType>
+ 
+ <xs:complexType name="conceptDescriptionType">
+  <xs:sequence>
+   <xs:element name="name" type="titleType" />
+   <xs:element name="description" type="descriptionType"/>
+   <xs:element name="uri" type="xs:anyURI"/>
+   <xs:element name="type" type="typeOf"/>
+  </xs:sequence>
+ </xs:complexType>
+ 
+ <xs:complexType name="relationsClassesType">
+  <xs:sequence>
+   <xs:element ref="relation" minOccurs="0" maxOccurs="unbounded"/>
+  </xs:sequence>
+ </xs:complexType>
+ 
+ 
+ <xs:complexType name="relationType">
+  <xs:sequence>   
+    <xs:element name="uri" type="xs:anyURI" minOccurs="0"/>
+    <xs:element ref="conceptDescription" minOccurs="0" maxOccurs="unbounded"/>
+    <xs:element name="hierarchy" type="typeHierarchy"/>
+    <xs:element name="value" type="xs:string" minOccurs="0"/>
+    <xs:element name="onproperty" type="xs:string" minOccurs="0"/>
+    <xs:element name="description" type="descriptionType" minOccurs="0"/>
+  </xs:sequence>
+ </xs:complexType>
+ 
+
+ 
+ 
+ <xs:element name="concept" type="conceptType"/>
+ <xs:element name="conceptDescription" type="conceptDescriptionType"/>
+ <xs:element name="concepts" type="conceptDescriptionListType"/>
+ <xs:element name="relations" type="relationsClassesType" />
+ <xs:element name="relation" type="relationType"/>
+ 
+ <!--Not necessary, if use InstanceTypeImpl 
+ <xs:element name="contexts" type="contextListType" />
+ <xs:element name="instances" type="conceptDescriptionListType" />
+  <xs:element name="instanceof" type="conceptDescriptionListType" />
+ -->
+  
+</xs:schema>
