@@ -1,0 +1,222 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.ontospread</groupId>
+	<artifactId>ontospread-web</artifactId>
+	<version>0.1-SNAPSHOT</version>
+	<name>ONTOSPREAD WEB, client</name>
+	<packaging>war</packaging>
+	<description>MOLDEAS WEB, client</description>
+	<properties>
+		<org.springframework.version>2.5</org.springframework.version>
+	</properties>
+
+	<dependencies>
+
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.0</version>
+			<type>jar</type>
+			<scope>test</scope>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.14</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+			<version>1.0.3</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.jersey</groupId>
+			<artifactId>jersey</artifactId>
+			<version>0.8-ea-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.jettison</groupId>
+			<artifactId>jettison</artifactId>
+			<version>1.2</version>
+		</dependency>
+
+<!--XML-Proccessing -->
+		<dependency>
+			<groupId>xalan</groupId>
+			<artifactId>xalan</artifactId>
+			<version>2.7.0</version>
+		</dependency>
+		<dependency>
+			<groupId>xerces</groupId>
+			<artifactId>xercesImpl</artifactId>
+			<version>2.7.1</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-digester</groupId>
+			<artifactId>commons-digester</artifactId>
+			<version>2.1</version>
+		</dependency>
+
+<!--Spring-->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring</artifactId>
+			<version>${org.springframework.version}</version>
+		</dependency>
+
+<!--Jena-->
+		<dependency>
+			<groupId>com.hp.hpl.jena</groupId>
+			<artifactId>jena</artifactId>
+			<version>2.6.4</version>
+		</dependency>
+		<dependency>
+			<groupId>com.hp.hpl.jena</groupId>
+			<artifactId>arq</artifactId>
+			<version>2.8.7</version>
+		</dependency>
+		<dependency>
+			<groupId>net.sf.opencsv</groupId>
+			<artifactId>opencsv</artifactId>
+			<version>2.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.geonames</groupId>
+			<artifactId>geonames</artifactId>
+			<version>1.0</version>
+		</dependency>
+
+	</dependencies>
+
+
+
+<!--Repositorios -->
+	<repositories>
+		<repository>
+			<id>java.net</id>
+			<name>java.net Maven Repository</name>
+			<url>https://maven-repository.dev.java.net/nonav/repository</url>
+			<layout>legacy</layout>
+		</repository>
+		<repository>
+			<id>maven2-repository.dev.java.net</id>
+			<name>Java.net Repository for maven</name>
+			<url>http://download.java.net/maven/2/</url>
+		</repository>
+		<repository>
+			<id>sonatype-repo</id>
+			<name>Sonatype Release Repo</name>
+			<url>http://oss.sonatype.org/content/repositories/sourceforge-releases</url>
+		</repository>
+		<repository>
+			<id>com.hp.hpl.jena</id>
+			<name>JENA Maven Repo</name>
+			<url>http://openjena.org/repo</url>
+		</repository>
+ 	</repositories>
+	
+  <pluginRepositories>
+
+	  <pluginRepository>  
+		<id>mc-release</id>  
+		<name>Local Maven repository of releases</name>  
+		<url>http://mc-repo.googlecode.com/svn/maven2/releases</url>  
+		<snapshots>  
+		    <enabled>false</enabled>  
+		</snapshots>  
+		<releases>  
+		    <enabled>true</enabled>  
+		</releases>  
+	    </pluginRepository> 
+
+	  </pluginRepositories>
+
+	<issueManagement>
+		<system>Code Google</system>
+		<url>http://code.google.com/p/moldeas</url>
+	</issueManagement>
+
+	<licenses>
+		<license>
+			<name>GNU LESSER GENERAL PUBLIC LICENSE</name>
+			<url>http://www.gnu.org/licenses/lgpl.html</url>
+			<distribution>repo</distribution>
+			<comments />
+		</license>
+	</licenses>
+	<developers>
+		<developer>
+			<id>chema_ar</id>
+			<name>Jose María Alvarez Rodriguez</name>
+			<email>chema.ar@gmail.com</email>
+			<url></url>
+			<organization />
+			<organizationUrl />
+			<roles>
+				<role>Project Admin</role>
+				<role>Developer</role>
+			</roles>
+			<timezone>2</timezone>
+			<properties />
+		</developer>
+	</developers>
+	<contributors>
+		<contributor>
+			<name>Jose Emilio Labra Gayo</name>
+			<email />
+			<url>http://www.di.uniovi.es/~labra</url>
+			<organization>Universidad de Oviedo</organization>
+			<organizationUrl>http://www.uniovi.es</organizationUrl>
+			<roles>
+				<role>Project Manager</role>
+			</roles>
+			<timezone>2</timezone>
+			<properties />
+		</contributor>
+	</contributors>
+
+
+<!--Build plugins -->
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-checkstyle-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+					<encoding>utf-8</encoding>
+					<showDeprecation>true</showDeprecation>
+				</configuration>
+			</plugin>
+      
+      <!-- WEB -->
+			<plugin>
+				<groupId>org.mortbay.jetty</groupId>
+				<artifactId>maven-jetty-plugin</artifactId>
+				<version>6.1.18</version>
+				<configuration>
+					<scanIntervalSeconds>10</scanIntervalSeconds>
+					<connectors>
+						<connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">
+							<port>9000</port>
+							<maxIdleTime>60000</maxIdleTime>
+						</connector>
+					</connectors>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>tomcat-maven-plugin</artifactId>
+				<version>1.1</version>
+
+			</plugin>
+		</plugins>
+	</build>
+</project>
